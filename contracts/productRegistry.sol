@@ -7,21 +7,30 @@ import "./ownable.sol";
  * @dev The ProductRegistry contract is used to register and manage the products.
  */
 contract ProductRegistry is Ownable {
+
+  enum Unit { Kg, Gram, Pound, Ounce, Ton, Liter, Milliliter, Gallon, Piece }
     
   struct Product {
     uint256 productId;
     string name;
     string origin;
     string batch;
+    uint256 quantity;
+    Unit unit;
     uint256 timestamp;
   }
   
   Product[] public products;
+
+  modifier verifyIfProductIdExists(uint256 _id) {
+    require(_id < products.length, "Product does not exist");
+    _;
+  }
   
-  function addProduct(string memory _name, string memory _origin, string memory _batch) public onlyOwner {
+  function addProduct(string memory _name, string memory _origin, string memory _batch, uint256 _quantity, Unit _unit) public onlyOwner {
     uint256 productId = products.length;
     uint256 timestamp = block.timestamp;
-    Product memory newProduct = Product(productId, _name, _origin, _batch, timestamp);
+    Product memory newProduct = Product(productId, _name, _origin, _batch, _quantity, _unit, timestamp);
     products.push(newProduct);
   }
   
@@ -29,8 +38,10 @@ contract ProductRegistry is Ownable {
     return products.length;
   }
   
-  function getProduct(uint256 _productId) public view returns (uint256, string memory, string memory, string memory, uint256) {
-    require(_productId < products.length, "Product does not exist");
+  function getProduct(uint256 _productId) public view 
+    verifyIfProductIdExists(_productId)
+    returns (uint256, string memory, string memory, string memory, uint256)
+  {
     Product memory product = products[_productId];
     return (product.productId, product.name, product.origin, product.batch, product.timestamp);
   }
