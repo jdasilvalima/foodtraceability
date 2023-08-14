@@ -12,6 +12,7 @@ contract UserProfiles is Ownable {
   
   struct UserProfile {
     string name;
+    string location;
     Role role;
   }
 
@@ -24,8 +25,8 @@ contract UserProfiles is Ownable {
     _;
   }
 
-  function setUserProfile(string memory _name, Role _role, address _user) public onlyOwner {
-    UserProfile memory userProfile = UserProfile(_name, _role);
+  function setUserProfile(string memory _name, string memory _location, Role _role, address _user) public onlyOwner {
+    UserProfile memory userProfile = UserProfile(_name, _location, _role);
     userProfiles[_user] = userProfile;
   }
 

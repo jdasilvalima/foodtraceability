@@ -14,7 +14,6 @@ contract ProductRegistry is Ownable {
     uint256 productId;
     string name;
     string origin;
-    string batch;
     uint256 quantity;
     Unit unit;
     uint256 timestamp;
@@ -27,10 +26,10 @@ contract ProductRegistry is Ownable {
     _;
   }
   
-  function addProduct(string memory _name, string memory _origin, string memory _batch, uint256 _quantity, Unit _unit) public onlyOwner {
+  function addProduct(string memory _name, string memory _origin, uint256 _quantity, Unit _unit) public onlyOwner {
     uint256 productId = products.length;
     uint256 timestamp = block.timestamp;
-    Product memory newProduct = Product(productId, _name, _origin, _batch, _quantity, _unit, timestamp);
+    Product memory newProduct = Product(productId, _name, _origin, _quantity, _unit, timestamp);
     products.push(newProduct);
   }
   
@@ -40,9 +39,9 @@ contract ProductRegistry is Ownable {
   
   function getProduct(uint256 _productId) public view 
     verifyIfProductIdExists(_productId)
-    returns (uint256, string memory, string memory, string memory, uint256)
+    returns (uint256, string memory, string memory, uint256, Unit, uint256)
   {
     Product memory product = products[_productId];
-    return (product.productId, product.name, product.origin, product.batch, product.timestamp);
+    return (product.productId, product.name, product.origin, product.quantity, product.unit, product.timestamp);
   }
 }

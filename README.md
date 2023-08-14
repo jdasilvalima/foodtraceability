@@ -1,2 +1,14 @@
 # foodtraceability
+
+![Solidity](https://img.shields.io/badge/Solidity-000000?style=for-the-badge&logo=solidity&logoColor=white)
+![Ethereum](https://img.shields.io/badge/Ethereum-white?style=for-the-badge&logo=ethereum&logoColor=blue)
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jdasilvalima/foodtraceability?style=for-the-badge)
+[![GitHub last commit](https://img.shields.io/github/last-commit/jdasilvalima/foodtraceability?style=for-the-badge)](https://github.com/jdasilvalima/foodtraceability/commits)
+
+## Project description
+### Introduction
 **OriginsTrack** - Transparent and secure food traceability. The "OriginsTrack" project aims to create a blockchain platform that will allow consumers to trace the provenance of their food back to its source.
+
+### System Architecture
+on going

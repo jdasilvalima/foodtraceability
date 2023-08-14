@@ -37,10 +37,20 @@ contract SupplyChain is ProductRegistry {
   
   function getProductStage(uint256 _productId, uint256 _stageIndex) public view 
     verifyIfProductIdExists(_productId) 
-    returns (uint256, SupplyChainStage, uint256) 
+    returns (uint256, SupplyChainStage, address, uint256) 
   {
     require(_stageIndex < productStages[_productId].length, "Stage does not exist");
     ProductStage memory stage = productStages[_productId][_stageIndex];
-    return (stage.productId, stage.stage, stage.timestamp);
+    return (stage.productId, stage.stage, stage.productOwner, stage.timestamp);
+  }
+
+  function getProductOwner(uint256 _productId) public view 
+    verifyIfProductIdExists(_productId) 
+    returns (address) 
+  {
+    uint256 lastStage = getProductStagesCount(_productId);
+    address lastProductOwner;
+    (,,lastProductOwner,) = getProductStage(_productId, lastStage - 1);
+    return lastProductOwner;
   }
 }
