@@ -16,6 +16,7 @@ contract("ProductRegistry", (accounts) => {
 
   describe("Add Product", () => {
     it("should add a product with correct details", async () => {
+      // ACT
       const result = await productRegistryInstance.addProduct(
         productName,
         productOrigin,
@@ -24,12 +25,10 @@ contract("ProductRegistry", (accounts) => {
         { from: owner }
       );
   
-      assert.equal(result.receipt.status, true, "Transaction failed");
-  
-      // ACT - Retrieve the added product
       const product = await productRegistryInstance.products(0);
   
       // ASSERT
+      assert.equal(result.receipt.status, true, "Transaction failed");
       assert.equal(product.name, productName, "Product name mismatch");
       assert.equal(product.origin, productOrigin, "Product origin mismatch");
       assert.equal(product.quantity.toNumber(), productQuantity, "Product quantity mismatch");

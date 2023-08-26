@@ -32,12 +32,8 @@ contract("UserProfiles", (accounts) => {
       // ASSERT
       assert.equal(result.receipt.status, true, "Transaction failed");
 
-      assert.equal(user.name, farmerName, "Nom du profil incorrect");
-      assert.equal(
-        user.role.toNumber(),
-        farmerRole,
-        "Rôle du profil incorrect"
-      );
+      assert.equal(user.name, farmerName, "Profile name mismatch");
+      assert.equal(user.role.toNumber(), farmerRole, "Profile role mismatch");
     });
   });
 
@@ -46,8 +42,8 @@ contract("UserProfiles", (accounts) => {
       const user = await userProfilesInstance.getUserProfile(farmer);
 
       // ASSERT - Vérifier que le profil correspond aux données définies
-      assert.equal(user[0], "Farmer Name", "Nom du profil incorrect");
-      assert.equal(user[1].toNumber(), 1, "Rôle du profil incorrect");
+      assert.equal(user[0], "Farmer Name", "Profile name mismatch");
+      assert.equal(user[1].toNumber(), 1, "Profile role mismatch");
     });
   });
 });
