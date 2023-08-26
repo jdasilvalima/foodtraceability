@@ -2,6 +2,7 @@
 
 ![Solidity](https://img.shields.io/badge/Solidity-000000?style=for-the-badge&logo=solidity&logoColor=white)
 ![Ethereum](https://img.shields.io/badge/Ethereum-white?style=for-the-badge&logo=ethereum&logoColor=blue)
+![Next.js](https://img.shields.io/badge/next.js-003791?style=for-the-badge&logo=nextdotjs&logoColor=white)
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jdasilvalima/foodtraceability?style=for-the-badge)
 [![GitHub last commit](https://img.shields.io/github/last-commit/jdasilvalima/foodtraceability?style=for-the-badge)](https://github.com/jdasilvalima/foodtraceability/commits)
