@@ -1,0 +1,52 @@
+[
+  {
+    "name": "John Doe",
+    "location": "New York",
+    "role": 1
+  },
+  {
+    "name": "Alice Smith",
+    "location": "Los Angeles",
+    "role": 2
+  },
+  {
+    "name": "Bob Johnson",
+    "location": "Chicago",
+    "role": 3
+  },
+  {
+    "name": "Eve Brown",
+    "location": "Miami",
+    "role": 4
+  },
+  {
+    "name": "Charlie White",
+    "location": "San Francisco",
+    "role": 1
+  },
+  {
+    "name": "Grace Davis",
+    "location": "Seattle",
+    "role": 2
+  },
+  {
+    "name": "Daniel Green",
+    "location": "Boston",
+    "role": 3
+  },
+  {
+    "name": "Sophia Adams",
+    "location": "Austin",
+    "role": 4
+  },
+  {
+    "name": "Oliver Harris",
+    "location": "Denver",
+    "role": 1
+  },
+  {
+    "name": "Mia Turner",
+    "location": "Phoenix",
+    "role": 2
+  }
+]
