@@ -1,0 +1,98 @@
+[
+  {
+    "productId": 0,
+    "name": "Produit",
+    "origin": "Origine",
+    "quantity": 200,
+    "unit": 8,
+    "timestamp": 1632000000
+  },
+  {
+    "productId": 1,
+    "name": "Produit 1",
+    "origin": "Origine 1",
+    "quantity": 100,
+    "unit": 0,
+    "timestamp": 1630000000
+  },
+  {
+    "productId": 2,
+    "name": "Produit 2",
+    "origin": "Origine 2",
+    "quantity": 50,
+    "unit": 5,
+    "timestamp": 1631000000
+  },
+  {
+    "productId": 3,
+    "name": "Produit 3",
+    "origin": "Origine 3",
+    "quantity": 200,
+    "unit": 8,
+    "timestamp": 1632000000
+  },
+  {
+    "productId": 4,
+    "name": "Pommes",
+    "origin": "France",
+    "quantity": 500,
+    "unit": 0,
+    "timestamp": 1632500000
+  },
+  {
+    "productId": 5,
+    "name": "Jus d'orange",
+    "origin": "Espagne",
+    "quantity": 1000,
+    "unit": 5,
+    "timestamp": 1632800000
+  },
+  {
+    "productId": 6,
+    "name": "Piment",
+    "origin": "Chine",
+    "quantity": 50,
+    "unit": 8,
+    "timestamp": 1633100000
+  },
+  {
+    "productId": 7,
+    "name": "Café moulu",
+    "origin": "Colombie",
+    "quantity": 250,
+    "unit": 1,
+    "timestamp": 1633400000
+  },
+  {
+    "productId": 8,
+    "name": "Produit 8",
+    "origin": "Origine 8",
+    "quantity": 200,
+    "unit": 8,
+    "timestamp": 1632000000
+  },
+  {
+    "productId": 9,
+    "name": "Produit 9",
+    "origin": "Origine 9",
+    "quantity": 100,
+    "unit": 0,
+    "timestamp": 1630000000
+  },
+  {
+    "productId": 10,
+    "name": "Produit 10",
+    "origin": "Origine 10",
+    "quantity": 50,
+    "unit": 5,
+    "timestamp": 1631000000
+  },
+  {
+    "productId": 11,
+    "name": "Produit 11",
+    "origin": "Origine 11",
+    "quantity": 200,
+    "unit": 8,
+    "timestamp": 1632000000
+  }
+]

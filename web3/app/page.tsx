@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -8,9 +9,11 @@ export default function Home() {
           Food traceability from <br />
           farmer to customer
         </div>
-        <button className="bg-lime-200 font-bold rounded-lg p-3 mt-5">
-          Connect to Metamask
-        </button>
+        <Link href="/products">
+          <button className="bg-lime-200 font-bold rounded-lg p-3 mt-5">
+            Connect to Metamask
+          </button>
+        </Link>
       </div>
       <div className="flex-1">
         <Image
