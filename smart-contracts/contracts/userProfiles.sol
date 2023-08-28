@@ -16,7 +16,8 @@ contract UserProfiles is Ownable {
     Role role;
   }
 
-  mapping(address => UserProfile) public userProfiles;
+  mapping(address => UserProfile) public userProfile;
+  address[] users;
 
   modifier onlyRole(address _user, Role _role) {
     Role userRole;
@@ -26,12 +27,13 @@ contract UserProfiles is Ownable {
   }
 
   function setUserProfile(string memory _name, string memory _location, Role _role, address _user) public onlyOwner {
-    UserProfile memory userProfile = UserProfile(_name, _location, _role);
-    userProfiles[_user] = userProfile;
+    UserProfile memory user = UserProfile(_name, _location, _role);
+    userProfile[_user] = user;
+    users.push(_user);
   }
 
   function getUserProfile(address _user) public view returns (string memory userName, Role userRole) {
-    UserProfile memory userProfile = userProfiles[_user];
-    return (userProfile.name, userProfile.role);
+    UserProfile memory user = userProfile[_user];
+    return (user.name, user.role);
   }
 }

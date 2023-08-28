@@ -19,6 +19,7 @@ const ProductsTable: React.FC = () => {
 
   return (
     <div className="max-h-[28rem] overflow-x-auto">
+      <h2 className="text-2xl font-bold mb-4">Products List</h2>
       <table>
         <thead>
           <tr>
