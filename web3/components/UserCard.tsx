@@ -18,8 +18,6 @@ const UserCard: React.FC<{ user: User }> = ({ user }) => {
     6: 'Auditor',
   };
 
-  const userRole = roleMapping[user.role];
-
   return (
     <div className="max-w-sm border-2 border-slate-400 rounded-xl overflow-hidden">
       <div className="md:flex">
@@ -28,7 +26,7 @@ const UserCard: React.FC<{ user: User }> = ({ user }) => {
         </div>
         <div className="p-8">
           <h2 className="mt-2 text-xl font-semibold">{user.name}</h2>
-          <div className="uppercase tracking-wide text-sm">{userRole}</div>
+          <div className="uppercase tracking-wide text-sm">{roleMapping[user.role]}</div>
           <p className="mt-2 text-gray-500">{user.location}</p>
         </div>
       </div>

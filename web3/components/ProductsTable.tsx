@@ -1,7 +1,6 @@
 "use client";
 
-import Link from 'next/link';
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import productList from '@/data/products.json'
 
 const ProductsTable: React.FC = () => {
@@ -19,7 +18,7 @@ const ProductsTable: React.FC = () => {
 
   return (
     <div className="max-h-[28rem] overflow-x-auto">
-      <h2 className="text-2xl font-bold mb-4">Products List</h2>
+      <h2 className="text-2xl font-bold mb-8">Products List</h2>
       <table>
         <thead>
           <tr>
