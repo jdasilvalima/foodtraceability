@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useState } from 'react'
-import productStages from '@/data/productStages.json'
+import { Stage } from '@/models/Stage';
 
-const StagesTable: React.FC = () => {
+const StagesTable: React.FC = ({ stages }) => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const stagesPerPage = 5;
 
   const indexOfLastProduct = currentPage * stagesPerPage;
   const indexOfFirstProduct = indexOfLastProduct - stagesPerPage;
-  const currentStages = productStages.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentStages = stages.slice(indexOfFirstProduct, indexOfLastProduct);
 
   const stageMapping = {
     0: 'Created',
@@ -48,8 +48,8 @@ const StagesTable: React.FC = () => {
           </tr>
         </thead>
         <tbody className="overflow-y-auto">
-          {currentStages.map((stage) => (
-            <tr key={stage.productId}>
+          {currentStages.map((stage: Stage) => (
+            <tr key={stage.timestamp}>
               <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{stageMapping[stage.stage]}</td>
               <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{stage.productOwner}</td>
               <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{ethereumDateToJsDate(stage.timestamp)}</td>
@@ -60,7 +60,7 @@ const StagesTable: React.FC = () => {
 
       <div className="mt-4">
         <ul className="pagination flex justify-end">
-          {Array.from({ length: Math.ceil(productStages.length / stagesPerPage) }, (_, index) => (
+          {Array.from({ length: Math.ceil(stages.length / stagesPerPage) }, (_, index) => (
             <li
               key={index}
               className={`px-3 py-1 cursor-pointer ${
