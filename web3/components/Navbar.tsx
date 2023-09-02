@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-lime-200 p-4 flex justify-between items-center">
+    <nav className="bg-lime-200 p-4 flex justify-between items-center sticky top-0">
       <div className="text-2xl font-bold">
         <Link href="/">
           OriginTracks

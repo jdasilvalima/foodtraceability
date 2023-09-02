@@ -15,7 +15,7 @@
     "productId": 1,
     "stage": 1,
     "productOwner": "Cd2a3d9F938e13Cd947EC05a7cF4EFb46bC55c26",
-    "timestamp": "1893456000"
+    "timestamp": "1893456002"
   },
   {
     "productId": 4,
@@ -27,12 +27,30 @@
     "productId": 4,
     "stage": 3,
     "productOwner": "742d35cc6634c0532925a3b844bc454e4438f44e",
-    "timestamp": "1709759700"
+    "timestamp": "1709759701"
+  },
+  {
+    "productId": 4,
+    "stage": 1,
+    "productOwner": "742d35Cc6634C0532925a3b844Bc454e4438f44e",
+    "timestamp": "1762963195"
   },
   {
     "productId": 4,
     "stage": 4,
     "productOwner": "742d35Cc6634C0532925a3b844Bc454e4438f44e",
-    "timestamp": "1762963199"
+    "timestamp": "1762963196"
+  },
+  {
+    "productId": 4,
+    "stage": 5,
+    "productOwner": "742d35Cc6634C0532925a3b844Bc454e4438f44e",
+    "timestamp": "1762963197"
+  },
+  {
+    "productId": 4,
+    "stage": 0,
+    "productOwner": "742d35Cc6634C0532925a3b844Bc454e4438f44e",
+    "timestamp": "1762963198"
   }
 ]

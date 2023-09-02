@@ -1,10 +1,13 @@
 "use client";
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Stage } from '@/models/Stage';
+import productStages from '@/data/productStages.json'
+import { ethereumDateToJsDate } from '@/service/utils';
 
-const StagesTable: React.FC = ({ stages }) => {
+const StagesTable: React.FC = ({ productId }) => {
 
+  const [stages, setStages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const stagesPerPage = 5;
 
@@ -23,40 +26,57 @@ const StagesTable: React.FC = ({ stages }) => {
     7: 'Received',
   };
 
+  useEffect(() => {
+    const searchIdProduct = parseInt(productId);
+    setStages([]);
+
+    if(searchIdProduct >= 0) {
+      const filteredStages = productStages.filter((stage) => stage.productId === searchIdProduct);
+      setStages(filteredStages);
+    }
+
+  }, [productId]); 
+
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
 
-  const ethereumDateToJsDate = (ethereumTimestamp: string): string  => {
-    return new Date((parseInt(ethereumTimestamp)) * 1000).toLocaleString();
-  }
-
   return (
-    <div className="max-h-[28rem] overflow-x-auto">
-      <table>
-        <thead>
-          <tr>
-            <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">
-              Stage
-            </th>
-            <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">
-              Product Owner
-            </th>
-            <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">
-              Timestamp
-            </th>
-          </tr>
-        </thead>
-        <tbody className="overflow-y-auto">
-          {currentStages.map((stage: Stage) => (
-            <tr key={stage.timestamp}>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{stageMapping[stage.stage]}</td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{stage.productOwner}</td>
-              <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{ethereumDateToJsDate(stage.timestamp)}</td>
+    <div className="overflow-x-auto">
+      <div className="min-h-[21rem]">
+        <table className="overflow-x-auto min-w-[50rem]">
+          <thead>
+            <tr>
+              <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                Stage
+              </th>
+              <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                Product Owner
+              </th>
+              <th className="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                Timestamp
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="overflow-y-auto">
+            {currentStages.length === 0 ? (
+              <tr>
+                <td colSpan="3" className="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-center">
+                  No data
+                </td>
+              </tr>
+            ) : (
+              currentStages.map((stage: Stage) => (
+                <tr key={stage.timestamp}>
+                  <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{stageMapping[stage.stage]}</td>
+                  <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{stage.productOwner}</td>
+                  <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{ethereumDateToJsDate(stage.timestamp)}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
 
       <div className="mt-4">
         <ul className="pagination flex justify-end">
