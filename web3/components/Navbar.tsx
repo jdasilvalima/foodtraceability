@@ -14,11 +14,13 @@ const Navbar: React.FC = () => {
           OriginTracks
         </Link>
       </div>
-      <div className="space-x-4">
-        <Link className={pathname === '/supplychain' ? 'active' : ''} href="/supplychain">SupplyChain</Link>
-        <Link className={pathname === '/products' ? 'active' : ''} href="/products">Products</Link>
-        <Link className={pathname === '/users' ? 'active' : ''} href="/users">Users</Link>
-      </div>
+      {pathname !== '/' && (
+        <div className="space-x-4">
+          <Link className={pathname === '/supplychain' ? 'active' : ''} href="/supplychain">SupplyChain</Link>
+          <Link className={pathname === '/products' ? 'active' : ''} href="/products">Products</Link>
+          <Link className={pathname === '/users' ? 'active' : ''} href="/users">Users</Link>
+        </div>
+      )}
     </nav>
   );
 };

@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from 'react'
 import { Stage } from '@/models/Stage';
+import { User } from '@/models/User';
 import productStages from '@/data/productStages.json'
+import mappingUserEthAddress from '@/data/mappingUserEthAddress.json'
 import { ethereumDateToJsDate } from '@/service/utils';
 
 const StagesTable: React.FC = ({ productId }) => {
@@ -37,13 +39,21 @@ const StagesTable: React.FC = ({ productId }) => {
 
   }, [productId]); 
 
+  const getUserProfileName = (ethereumAddress: string) : string => {
+    const user: User = mappingUserEthAddress[ethereumAddress];
+    if(user)
+      return user.name;
+    else
+      return ethereumAddress;
+  };
+
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
 
   return (
     <div className="overflow-x-auto">
-      <div className="min-h-[21rem]">
+      <div className="min-h-[20rem]">
         <table className="overflow-x-auto min-w-[50rem]">
           <thead>
             <tr>
@@ -69,7 +79,7 @@ const StagesTable: React.FC = ({ productId }) => {
               currentStages.map((stage: Stage) => (
                 <tr key={stage.timestamp}>
                   <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{stageMapping[stage.stage]}</td>
-                  <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{stage.productOwner}</td>
+                  <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{getUserProfileName(stage.productOwner)}</td>
                   <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{ethereumDateToJsDate(stage.timestamp)}</td>
                 </tr>
               ))

@@ -1,0 +1,22 @@
+{
+  "742d35Cc6634C0532925a3b844Bc454e4438f44e": {
+    "name": "John Doe",
+    "location": "New York",
+    "role": 1
+  },
+  "Cd2a3d9F938e13Cd947EC05a7cF4EFb46bC55c26": {
+    "name": "Charlie White",
+    "location": "San Francisco",
+    "role": 1
+  },
+  "5a0b54D5dc17e0AadC383d2db43B0a0D3E029c4c": {
+    "name": "Mia Turner",
+    "location": "Phoenix",
+    "role": 2
+  },
+  "742d35cc6634c0532925a3b844bc454e4438f44e":   {
+    "name": "Daniel Green",
+    "location": "Boston",
+    "role": 3
+  }
+}
