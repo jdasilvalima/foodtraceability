@@ -36,7 +36,7 @@ git clone git@github.com:jdasilvalima/foodtraceability.git
 **Checkout smart contracts directory**
 
 ```
-cd foodtraceability
+cd foodtraceability/smart-contracts
 ```
 
 **Run Test Coverage**
@@ -44,3 +44,37 @@ cd foodtraceability
 ```
 truffle test
 ```
+
+### Setting Client Application
+This is a [Next.js](https://nextjs.org/) project.
+
+**Checkout client directory**
+```
+cd foodtraceability/web3
+```
+
+**Install Dependencies**
+```
+npm install
+```
+
+**Getting Started**
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Website UI
+![Home Page image](https://github.com/jdasilvalima/foodtraceability/blob/main/web3/public/presentation/home_page.png)
+
+![Products Page image](https://github.com/jdasilvalima/foodtraceability/blob/main/web3/public/presentation/products_page.png)
+
+![Users Page image](https://github.com/jdasilvalima/foodtraceability/blob/main/web3/public/presentation/users_page.png)
+
+![Supplychain Page image](https://github.com/jdasilvalima/foodtraceability/blob/main/web3/public/presentation/supplychain_page.png)
