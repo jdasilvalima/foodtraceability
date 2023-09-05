@@ -21,12 +21,13 @@
 
 ### Requirements
 
-- [NodeJS](https://nodejs.org/en) >= 10.16 and [npm](https://www.npmjs.com/) >= 5.6 installed.
-- [Git](https://git-scm.com/) installed in the system.
+- [NodeJS](https://nodejs.org/en) >= 10.16 and [npm](https://www.npmjs.com/) >= 5.6 installed
+- [Git](https://git-scm.com/) installed in the system
 - [Truffle](https://www.trufflesuite.com/truffle), which can be installed globally with `npm install -g truffle`
+- [Ganache](https://trufflesuite.com/ganache/) installed in the system
+- [MetaMask](https://metamask.io/) installed in your browser
 
 **Clone the repository**
-
 ```bash
 git clone git@github.com:jdasilvalima/foodtraceability.git
 ```
@@ -34,15 +35,18 @@ git clone git@github.com:jdasilvalima/foodtraceability.git
 ### Setting Up Truffle Project
 
 **Checkout smart contracts directory**
-
 ```
 cd foodtraceability/smart-contracts
 ```
 
 **Run Test Coverage**
-
 ```
 truffle test
+```
+
+**Compile contracts + obtain ABI files**
+```
+truffle compile
 ```
 
 ### Setting Client Application

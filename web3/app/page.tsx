@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from 'next/image'
 import Web3 from 'web3';
+import productRegistryAbi from '@/abi/ProductRegistry.json'
 
 export default function Home() {
 
@@ -18,8 +18,26 @@ export default function Home() {
         // request the user to connect their MetaMask account to the web application
         await window.ethereum.enable();
         const accounts = await web3.eth.getAccounts();
-        const userAddress = accounts[0];
-        // TODO save user
+        const userAccount = accounts[0];
+        // TODO save user + connection to web3
+        
+        // Instanciation de myContract
+        const myContractAddress = "JYUJHKNKJ425487HJKBHB";
+        const myContract = new web3.eth.Contract(productRegistryAbi, myContractAddress);
+
+        // method GET
+        const productCount = myContract.methods.getProductCount().call();
+        console.log("productCount : ", productCount);
+
+        // method POST
+        myContract.methods.addProduct().send({ from: userAccount })
+        .on("receipt", function(receipt) {
+          console.log("blockchain transaction succeeded !");
+        })
+        .on("error", function(error) {
+          console.log("Error with the blockchain transaction...");
+        });
+
         router.push("/products");
       } 
       catch (error) {
