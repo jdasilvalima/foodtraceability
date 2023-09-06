@@ -49,6 +49,14 @@ truffle test
 truffle compile
 ```
 
+### Setting Up Ganache
+
+**Ganache port**
+Verify Ganache port and changed the port in the truffle-config.js file if needed.
+
+**Run a development network**
+[Doc1](https://docs.metamask.io/wallet/how-to/get-started-building/run-devnet/) [Doc2](https://trufflesuite.com/docs/truffle/how-to/truffle-with-metamask/) [Doc3](https://coinsbench.com/connect-to-metamask-from-new-or-existing-web-application-with-truffle-and-ganache-f48aa763c0ac)
+
 ### Setting Client Application
 This is a [Next.js](https://nextjs.org/) project.
 
