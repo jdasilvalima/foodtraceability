@@ -110,3 +110,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ![Users Page image](https://github.com/jdasilvalima/foodtraceability/blob/main/web3/public/presentation/users_page.png)
 
 ![Supplychain Page image](https://github.com/jdasilvalima/foodtraceability/blob/main/web3/public/presentation/supplychain_page.png)
+
+Avocado image credit : [Taras Migulko](https://dribbble.com/ui_migulko)
